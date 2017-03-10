@@ -1,0 +1,21 @@
+{
+  "name": "group-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/V-School-SLC-January/team-taco.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/V-School-SLC-January/team-taco/issues"
+  },
+  "homepage": "https://github.com/V-School-SLC-January/team-taco#readme"
+}
