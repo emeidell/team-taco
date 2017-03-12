@@ -17,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/V-School-SLC-January/team-taco/issues"
   },
-  "homepage": "https://github.com/V-School-SLC-January/team-taco#readme"
+  "homepage": "https://github.com/V-School-SLC-January/team-taco#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.8.7",
+    "morgan": "^1.8.1",
+    "request": "^2.81.0"
+  }
 }
