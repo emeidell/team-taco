@@ -5,7 +5,7 @@ var restaurantRoutes = express.Router();
 var Restaurant = require("../models/restaurantSchema");
 var request = require("request");
 
-//get express and other variables you need
+//this will be the restaurant routes use for our own database we will add routes for when we connect to the zoomato api separately.
 
 restaurantRoutes.route("/")
     .get(function (req, res) {
@@ -40,15 +40,8 @@ restaurantRoutes.route("/:id")
             if (err) return res.status(500).send(err);
             res.send({success: true, message: "restaurant successfully deleted"});
         })
-    })
-
-
-request("url", function (err, response, body) {
-    
-})
+    });
 
 
 module.exports = restaurantRoutes;
 
-
-//set up the routes to allow for C.R.U.D other modifications can be made later if needed
