@@ -5,9 +5,10 @@ var morgan = require("morgan");
 var config = require("./config");       //you will have to write your own config file to link here
 var mongoose = require("mongoose");
 var port = process.env.PORT || 8080;    //feel free to use any default port number you want
-
+var path = require("path");
 
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, "public")));
 app.use(morgan("dev"));
 //we will eventually set up user auth middlewhere here with a secret of your choosing from your config file
 
