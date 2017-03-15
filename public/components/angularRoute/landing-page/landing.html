@@ -1,0 +1,38 @@
+<div class="row login">
+    <div class="col-md-12">
+        <h2 class="login-title" id="login-title-small">Taco Tuesday</h2>
+        <button style="background-color:rgba(0,0,0,0); border:0" class="login-submit center-block" data-toggle="modal" data-target="#myModal">Log In</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Log In</h4>
+            </div>
+            <div class="modal-body">
+                <form class="login-form-group center-block" name="loginForm">
+                    <label for="username">UserName</label>
+                    <input class="form-control" name="username" id="username" ng-pattern="restrict" ng-minlength="3" required ng-model="user.userName">
+
+
+                    <label for="email">Email</label>
+                    <input class="form-control" name="email" id="email" required ng-model="user.email">
+
+                    <label for="password">Password</label>
+                    <input class="form-control" name="password" id="password" required ng-model="user.password">
+                    <button type="submit" ng-click="login(user)" class="btn btn-primary btn-lrg">Submit</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-disabled="loginForm.$invalid">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

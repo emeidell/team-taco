@@ -1,0 +1,175 @@
+#wrapper {
+    padding-left: 200px;
+    transition: all 0.4s ease 0s;
+}
+
+#sidebar-wrapper {
+    margin-left: -200px;
+    left: 200px;
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: all 0.4s ease 0s;
+}
+
+#page-content-wrapper {
+    width: 100%;
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 200px;
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+    text-align: center;
+    font-family:serif;
+    margin-top:70px;
+
+}
+
+@media (max-width:767px) {
+
+    #wrapper {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        left: 0;
+    }
+
+    #wrapper.active {
+        position: relative;
+        left: 200px;
+    }
+
+    #wrapper.active #sidebar-wrapper {
+        left: 200px;
+        width: 200px;
+        transition: all 0.4s ease 0s;
+    }
+
+}
+
+ul li a:hover{
+    text-decoration: none;
+    color:black;
+}
+ul li a:visited{
+    text-decoration: none;
+    color:black;
+}
+ul li a:active{
+    text-decoration: none;
+    color:black;
+}
+
+ul li{
+    margin-top:20px;
+}
+
+ul li a{
+    color:black;
+    font-size:30px;
+    margin-top:20px;
+
+}
+
+
+body{
+    background-image:url("../public/components/photos/eaters-collective-132773.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 10px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+.search-label{
+    margin-bottom:-20px;
+}
+
+#header{
+    font-family:serif;
+    font-size:50px;
+}
+
+/*********************  Log In Page  *************************/
+
+.login-title{
+    font-size:60px;
+    font-family: 'Diplomata SC', cursive;
+    text-align: center;
+}
+
+.login{
+    background-color:rgba(255, 0, 0, 0.6);
+    padding:30px;
+    color:white;
+    margin-top:200px;
+}
+.login-form-group{
+    width:300px;
+    text-align: center;
+}
+.login-submit{
+    color:black;
+    font-size:40px;
+    font-family: 'Gloria Hallelujah', cursive;
+    text-decoration: underline;
+}
+
+@media (max-width: 767px){
+    #login-title-small{
+        font-size:30px;
+    }
+}
+
+/*************************  Signup Page  *************************/
+
+.signup-title{
+    font-size:100px;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+}
+
+.signup{
+    background-color:rgba(255, 255, 0, 0.6);
+    padding:10px;
+    color:black;
+    margin-top:200px;
+}
+.signup-form-group{
+    width:300px;
+    text-align: center;
+}
+.signup-submit{
+    color:black;
+    font-size:40px;
+    font-family: 'Cinzel', serif;
+    text-decoration: underline;
+}
+
+@media (max-width: 767px){
+    #signup-title-small{
+        font-size:60px;
+    }
+}
