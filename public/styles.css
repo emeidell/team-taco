@@ -26,12 +26,12 @@
     margin: 0;
     padding: 0px;
     text-align: center;
-    font-family:serif;
-    margin-top:70px;
+    font-family: serif;
+    margin-top: 70px;
 
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
 
     #wrapper {
         padding-left: 0;
@@ -54,35 +54,37 @@
 
 }
 
-ul li a:hover{
+ul li a:hover {
     text-decoration: none;
-    color:black;
+    color: black;
 }
-ul li a:visited{
+
+ul li a:visited {
     text-decoration: none;
-    color:black;
+    color: black;
 }
-ul li a:active{
+
+ul li a:active {
     text-decoration: none;
-    color:black;
+    color: black;
 }
 
-ul li{
-    margin-top:20px;
+ul li {
+    margin-top: 20px;
 }
 
-ul li a{
-    color:black;
-    font-size:30px;
-    margin-top:20px;
+ul li a {
+    color: black;
+    font-size: 30px;
+    margin-top: 20px;
 
 }
 
-
-body{
-    background-image:url("../public/components/photos/eaters-collective-132773.jpg");
-    background-repeat:no-repeat;
-    background-size:cover;
+body {
+    background-image: url("/components/photos/eaters-collective-132773.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-position: center center;*/
 }
 
 input[type=text] {
@@ -103,73 +105,80 @@ input[type=text]:focus {
     width: 100%;
 }
 
-.search-label{
-    margin-bottom:-20px;
+.search-label {
+    margin-bottom: -20px;
 }
 
-#header{
-    font-family:serif;
-    font-size:50px;
+#header {
+    font-family: serif;
+    font-size: 50px;
 }
 
 /*********************  Log In Page  *************************/
 
-.login-title{
-    font-size:60px;
+.login-title {
+    font-size: 60px;
     font-family: 'Diplomata SC', cursive;
     text-align: center;
 }
 
-.login{
-    background-color:rgba(255, 0, 0, 0.6);
-    padding:30px;
-    color:white;
-    margin-top:200px;
+.login {
+    background-color: rgba(255, 0, 0, 0.6);
+    padding: 30px;
+    color: white;
+    margin-top: 200px;
 }
-.login-form-group{
-    width:300px;
+
+.login-form-group {
+    width: 300px;
     text-align: center;
 }
-.login-submit{
-    color:black;
-    font-size:40px;
+
+.login-submit {
+    color: black;
+    font-size: 40px;
     font-family: 'Gloria Hallelujah', cursive;
     text-decoration: underline;
 }
 
-@media (max-width: 767px){
-    #login-title-small{
-        font-size:30px;
+@media (max-width: 767px) {
+    #login-title-small {
+        font-size: 30px;
     }
 }
 
 /*************************  Signup Page  *************************/
 
-.signup-title{
-    font-size:100px;
+.signup-title {
+    font-size: 100px;
     font-family: 'Lobster', cursive;
     text-align: center;
 }
 
-.signup{
-    background-color:rgba(255, 255, 0, 0.6);
-    padding:10px;
-    color:black;
-    margin-top:200px;
+.signup {
+    background-color: rgba(255, 255, 0, 0.6);
+    padding: 10px;
+    color: black;
+    margin-top: 200px;
 }
-.signup-form-group{
-    width:300px;
+
+.signup-form-group {
+    width: 300px;
     text-align: center;
 }
-.signup-submit{
-    color:black;
-    font-size:40px;
+
+.signup-submit {
+    color: black;
+    font-size: 40px;
     font-family: 'Cinzel', serif;
     text-decoration: underline;
 }
 
-@media (max-width: 767px){
-    #signup-title-small{
-        font-size:60px;
+@media (max-width: 767px) {
+    #signup-title-small {
+        font-size: 60px;
     }
+}
+.mainContent {
+    margin-left: 300px;
 }
