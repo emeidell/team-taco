@@ -39,3 +39,12 @@
         </div>
     </div>
 </div>
+
+<div class="mainContent">
+    <div>
+        <div ng-repeat="restaurant in zoomatoDisplay.restaurants">
+            <h3>{{ restaurant.restaurant.name }}</h3>
+            <button type="button" ng-click="getZoomato()" class="btn btn-success">Add To Vacation</button>
+        </div>
+    </div>
+</div>
