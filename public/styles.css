@@ -7,7 +7,7 @@
     margin-left: -200px;
     left: 200px;
     width: 200px;
-    position: fixed;
+    position: absolute;
     height: 100%;
     overflow-y: auto;
     z-index: 1000;
@@ -51,6 +51,10 @@
         width: 200px;
         transition: all 0.4s ease 0s;
     }
+
+}
+#nav-search-btn{
+    margin:5px 0px 0px -75px;
 
 }
 
@@ -179,6 +183,98 @@ input[type=text]:focus {
         font-size: 60px;
     }
 }
-.mainContent {
-    margin-left: 300px;
+/*<<<<<<< Updated upstream*/
+
+/*=======*/
+
+/********************** vacation page *************************/
+.dropdown-menu a{
+    font-size:18px;
 }
+
+.dropdown-toggle{
+    margin-top:40px;
+}
+
+.jumbotron{
+    height:300px;
+    background-image:url(178a88cbb89df42557523f39ccc31cbc.jpg);
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+}
+
+.schedule-header{
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size:60px;
+    margin-bottom: 30px;
+
+}
+table{
+}
+
+table th{
+    width:250px;
+    font-size:20px;
+    text-decoration:underline;
+    text-align: center;
+}
+tr td{
+    padding-top:30px;
+    /*border:1px solid black;*/
+    text-align: center;
+}
+footer{
+    margin-top:60px;
+    text-align: center;
+}
+footer ul li{
+    display:inline;
+    font-family:serif;
+    font-size:30px;
+
+}
+
+footer li{
+    padding-left:20px;
+}
+
+
+/********************** Profile Page *************************/
+
+header{
+    margin-top:5px;
+}
+
+header img{
+    height: 80px;
+    width:80px;
+    border-radius:5px;
+    margin:0px 20px 0px -20px;
+}
+
+header ul li{
+    display:inline;
+}
+
+input{
+    border-radius:5px;
+    height:35px;
+    width:200px;
+}
+
+#order-btn{
+    margin-left:200px;
+}
+
+/************************ Home Page ***************************/
+
+.mainContent{
+    background-color:rgba(1,1,1,0.2);
+    text-align: center;
+    color:white;
+}
+
+
+
+/*>>>>>>> Stashed changes*/
