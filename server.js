@@ -23,7 +23,7 @@ app.use(morgan("dev"));
 app.use("/auth", require("./backend/routes/authRoutes"));
 app.use("/restaurant", require("./backend/routes/restaurantRoutes"));
 app.use("/zoomato", require("./backend/routes/zoomatoRoutes"));
-app.user("/secure/user", require("./backend/routes/userRoutes"));
+app.use("/secure/user", require("./backend/routes/userRoutes"));
 
 //set up and connect to database the database is linked from your config file.
 //feel free to use whatever database name you want "mongodb://localhost/{{ your db name here }}"
