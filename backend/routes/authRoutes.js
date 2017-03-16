@@ -30,3 +30,5 @@ authRoutes.route("/login")
             });
         })
     });
+
+module.exports = authRoutes;
