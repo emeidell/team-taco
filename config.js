@@ -9,5 +9,5 @@
 module.exports = {
     database: "mongodb://localhost/team-taco",
     secret: "some secret",
-    key: "def05fa3e0ab82ba4566702c9f7853d4"
+    key: "e1a03a6e8cd376c5862d5ae85d196030"
 };
