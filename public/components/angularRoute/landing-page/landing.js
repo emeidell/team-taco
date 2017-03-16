@@ -7,3 +7,9 @@
 // function closeNav() {
 //     document.getElementById("mySidenav").style.width = "0";
 // }
+
+angular.module("Main", ["ui.bootstrap"])
+
+.controller("landingController", ["$uibModal"], function(uibModal) {
+
+})
