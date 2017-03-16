@@ -12,7 +12,7 @@ angular.module("Main", ['ngRoute'])
             templateUrl: './components/angularRoute/'
         })
         .when('/landing', {
-            // controller: 'landingController',
+            controller: 'landingController',
             templateUrl: './components/angularRoute/landing-page/landing.html'
         })
         .otherwise({
