@@ -1,3 +1,18 @@
+
+<div  id="header-home" class="row">
+    <div class="col-md-10 text-center">
+        <h1 id="header-name">Taco Tuesday</h1>
+    </div>
+    <div class="col-md-2">
+        <button id="home-profile-btn" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Mike
+            <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Log out</a></li>
+        </ul>
+    </div>
+</div>
 <div id="wrapper">
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
@@ -22,40 +37,24 @@
             </select></li>
 
             <li class="search-label">Search for City Name</li>
-            <li><input type="text" name="search" placeholder="Search.."></li>
+            <li><input class="form-control" type="text" name="search" placeholder="City name"></li>
             <button id="nav-search-btn" type="button">Search</button>
         </ul>
     </div>
     <div id="page-content-wrapper">
         <div class="page-content bkgrnd-img">
-            <div class="">
-                <div class="row">
-                    <div class="col-md-9">
-                        <header>
-                            <h1 id="header">Taco Tuesday</h1>
-                        </header>
-                    </div>
 
-                    <div class="col-md-3">
-                        <button id="profile-btn" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Mike
-                            <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Reviews</a></li>
-                            <li><a href="#">Log out</a></li>
-                        </ul>
-                    </div>
-                </div>
                 <div class="mainContent">
+
                     <div class="row">
-                        <div class="col-md-4 " ng-repeat="restaurant in zoomatoDisplay.restaurants">
+                        <h2 id="featured-restaurant">Featured Restaurants</h2>
+                        <div class="col-md-6 restaurant-info" ng-repeat="restaurant in zoomatoDisplay.restaurants">
                             <h3>{{ restaurant.restaurant.name }}</h3>
-                            <button type="button" ng-click="getZoomato()" class="btn btn-success">Add To Vacation</button>
+                            <h4>{{ restaurant.restaurant.cuisines }}</h4>
+                            <button type="button" ng-click="getZoomato()" class="btn" style="background-color:rgba(0,0,0,0); border:0; color:white; text-shadow:2px 2px black;">Add To Vacation</button>
                         </div>
                     </div>
                 </div>
-
-            </div>
         </div>
     </div>
 </div>
