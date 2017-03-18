@@ -9,7 +9,7 @@ angular.module("Main", ['ngRoute'])
             templateUrl: './components/angularRoute/vacationRoute/vacation.html'
         })
         .when("/profile", {
-            templateUrl: './components/angularRoute/'
+            templateUrl: './components/angularRoute/profile/profile.html'
         })
         .when('/landing', {
             controller: 'landingController',
