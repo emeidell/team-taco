@@ -1,4 +1,4 @@
-angular.module("Main", ['ngRoute'])
+angular.module("Main", ['ngRoute', 'ngStorage'])
 .config(function ($routeProvider) {
     $routeProvider
         .when("/home", {
