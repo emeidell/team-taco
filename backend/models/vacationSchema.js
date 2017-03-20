@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 vacationSchema = new Schema({
     user: {
-        type: mongoose.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "User",
         required: true
     },
@@ -21,20 +21,20 @@ vacationSchema = new Schema({
         days: [
             {
                 date: String,
-                morning: [{
+                breakfast: [{
                     restaurants: [{
                         type: Schema.Types.ObjectId,
                         rel: "Restaurant"
                     }]
                 }],
-                afternoon: [{
+                lunch: [{
                     restaurants: [{
                         type: Schema.Types.ObjectId,
                         rel: "Restaurant"
                     }]
 
                 }],
-                evening: [{
+                dinner: [{
                     restaurants: [{
                         type: Schema.Types.ObjectId,
                         rel: "Restaurant"
