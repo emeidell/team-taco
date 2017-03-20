@@ -7,6 +7,15 @@ vacationSchema = new Schema({
         ref: "User",
         required: true
     },
+    name: {
+        type: String,
+        required: true
+    },
+    notes: String,
+    isActive: {
+        type: Boolean,
+        default: true
+    },
     days: {
         totalDays: Number,
         days: [

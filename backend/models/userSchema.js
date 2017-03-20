@@ -14,7 +14,8 @@ userSchema = new Schema({
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        lowercase: true
     },
     password: {
         type: String,
@@ -23,14 +24,13 @@ userSchema = new Schema({
     zipCode: String,
     displayName: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     }
 });
 
 userSchema.pre("save", function (next) {
     var user = this;
-    if (!user.isModified("password")) return next;
+    if (!user.isModified("password")) return next();
     bcrypt.hash(user.password, 10, function (err, hash) {
         if (err) return next(err);
         user.password = hash;
