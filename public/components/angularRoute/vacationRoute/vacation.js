@@ -1,12 +1,3 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 angular.module("Main")
 
 .controller("vacationController", ["$scope", "VacationService", "$localStorage", function ($scope, VacationService, $localStorage) {
@@ -22,13 +13,4 @@ angular.module("Main")
             })
     }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 }]);
->>>>>>> Stashed changes
-=======
-}]);
->>>>>>> Stashed changes
-=======
-}]);
->>>>>>> Stashed changes
