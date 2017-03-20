@@ -23,16 +23,12 @@
             </div>
             <div class="modal-body">
                 <form class="login-form-group center-block" name="loginForm">
-                    <label for="username">UserName</label>
-                    <input class="form-control" name="username" id="username" ng-pattern="restrict" ng-minlength="3" required ng-model="user.userName">
-
-
                     <label for="email">Email</label>
                     <input class="form-control" name="email" id="email" required ng-model="user.email">
 
                     <label for="password">Password</label>
                     <input class="form-control" name="password" id="password" required ng-model="user.password">
-                    <button type="submit" ng-click="login(user)" class="btn btn-primary btn-lrg">Submit</button>
+                    <button type="button" ng-click="login(user)" class="btn btn-primary btn-lrg">Submit</button>
                 </form>
             </div>
             <div class="modal-footer">
@@ -60,9 +56,9 @@
                     <label for="last-name">Last Name</label>
                     <input class="form-control" name="last-name" id="last-name" required ng-model="user.lastName">
 
-                    <label for="username">UserName</label>
-                    <input class="form-control" name="username" id="username" ng-pattern="restrict" ng-minlength="3" required ng-model="user.userName">
-                    <p ng-show="signupForm.username.$invalid && signupForm.username.$touched">User Name must be at least 3 characters</p>
+                    <label for="displayName">Display Name</label>
+                    <input class="form-control" name="displayName" id="displayName" ng-pattern="restrict" ng-minlength="3" required ng-model="user.displayName">
+                    <p ng-show="signupForm.displayName.$invalid && signupForm.displayName.$touched">Display Name must be at least 3 characters</p>
 
                     <label for="email">Email</label>
                     <input class="form-control" name="email" id="email" required ng-model="user.email">
