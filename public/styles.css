@@ -145,6 +145,19 @@ input[type=text]:focus {
     color:yellow;
     text-shadow: 2px 2px black;
 }
+#restaurant-button{
+    font-size:30px;
+    text-shadow:2px 2px black;
+}
+#modal-restaurant-name{
+    text-align: center;
+    font-family:serif;
+    font-size:30px;
+}
+#modal-image{
+    height:200px;
+    width:200px;
+}
 
 /*********************  Log In Page  *************************/
 
