@@ -6,7 +6,8 @@ angular.module("Main", ['ngRoute', 'ngStorage'])
             controller: 'homeController'
         })
         .when("/vacation", {
-            templateUrl: './components/angularRoute/vacationRoute/vacation.html'
+            templateUrl: './components/angularRoute/vacationRoute/vacation.html',
+            controller: 'vacationController'
         })
         .when("/profile", {
             templateUrl: './components/angularRoute/profile/profile.html'
