@@ -36,3 +36,5 @@ vacationRoutes.route("/:id")
             res.send({success: true, message: "vacation successfully deleted"});
         })
     });
+
+module.exports = vacationRoutes;
