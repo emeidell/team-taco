@@ -5,7 +5,7 @@ angular.module("Main")
     $scope.user = $localStorage.user;
     $scope.vacations = [];
 
-    $scope.getVacations = function ($scope.user) {
+    $scope.getVacations = function (user) {
         VacationService.getVacations($scope.user)
             .then(function (response) {
                 $scope.vacations = response;
