@@ -54,8 +54,8 @@
 
 }
 #nav-search-btn{
-    margin:5px 0px 0px 0px;
-    float:left;
+    margin:5px 0px 0px -75px;
+
 }
 
 ul li a:hover {
@@ -88,8 +88,8 @@ body {
     background-image: url("/components/photos/eaters-collective-132773.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
     background-position: center center;
+    background-attachment: fixed;
 }
 
 input[type=text] {
