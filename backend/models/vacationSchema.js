@@ -17,10 +17,13 @@ vacationSchema = new Schema({
         default: true
     },
     days: {
-        totalDays: Number,
+        totalDays: {
+            type: Number,
+            default: 0
+        },
         days: [
             {
-                date: String,
+                dayOfWeek: String,
                 breakfast: [{
                     restaurants: [{
                         type: Schema.Types.ObjectId,
