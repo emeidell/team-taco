@@ -6,6 +6,7 @@ vacationRoutes.route("/")
     .get(function (req, res) {
         Vacation.find({user: req.query.user}, function (err, vacations) {
             if (err) return res.status(500).send(err);
+            if (!vacations.length) return res.status(404).send({message: "no vacation"})
             res.send(vacations)
         })
     })

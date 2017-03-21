@@ -15,11 +15,16 @@ restaurantRoutes.route("/")
         })
     })
     .post(function (req, res) {
-        var restaurant = new Restaurant(req.body);
-        restaurant.save(function (err, newRestaurant) {
+        Restaurant.findOne({id: req.body.id}, function (err, existingRestaurant) {
             if (err) return res.status(500).send(err);
-            res.status(201).send(newRestaurant);
-        })
+            if (existingRestaurant) return res.send(existingRestaurant);
+            var restaurant = new Restaurant(req.body);
+            restaurant.save(function (err, newRestaurant) {
+                if (err) return res.status(500).send(err);
+                res.status(201).send(newRestaurant);
+            });
+        });
+
     });
 
 restaurantRoutes.route("/:id")
