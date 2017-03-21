@@ -1,16 +1,22 @@
 angular.module("Main")
 
-.controller("vacationController", ["$scope", "VacationService", "$localStorage", function ($scope, VacationService, $localStorage) {
+.controller("vacationController", ["$scope", "VacationService", "userSigninService", function ($scope, VacationService, userSigninService) {
 
-    $scope.user = $localStorage.user;
-    $scope.vacations = [];
+    $scope.user = userSigninService.getUser();
 
-    $scope.getVacations = function (user) {
+    $scope.vacation = {};
+
+    $scope.getVacations = function () {
         VacationService.getVacations($scope.user)
             .then(function (response) {
-                $scope.vacations = response;
-                console.log($scope.vacations);
+                $scope.vacation = response;
+                console.log($scope.vacation);
             })
+    };
+
+    $scope.removeRestaurant = function (index) {
+        $scope.vacation.vacationDetails.mealSchedule.splice(index, 1);
+        VacationService.updateVacation($scope.vacation);
     }
 
 }]);

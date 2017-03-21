@@ -55,16 +55,16 @@ angular.module("Main")
             })
     }
 
-    this.removeRestaurant = function (vacation, restaurant) {
-        return self.updateVacation(vacation)
-            .then(function (response) {
-                return response.data;
-            },
-            function (response) {
-                console.log(response);
-                alert("AAAhhhhhh!");
-            })
-    }
+    // this.removeRestaurant = function (vacation) {
+    //     return self.updateVacation(vacation)
+    //         .then(function (response) {
+    //             return response.data;
+    //         },
+    //         function (response) {
+    //             console.log(response);
+    //             alert("AAAhhhhhh!");
+    //         })
+    // }
 
 
 
