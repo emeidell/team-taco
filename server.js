@@ -16,12 +16,12 @@ app.use(morgan("dev"));
 
 
     //!!!!!!!!!!!!!Enable next line when user auth is in place!!!!!!!!!!!!!!//
-//app.user("/secure", expressJwt({secret: config.secret}));
+app.use("/secure", expressJwt({secret: config.secret}));
 
 
 //set up routes for requests to link to
 app.use("/auth", require("./backend/routes/authRoutes"));
-app.use("/restaurant", require("./backend/routes/restaurantRoutes"));
+app.use("/secure/restaurant", require("./backend/routes/restaurantRoutes"));
 app.use("/zoomato", require("./backend/routes/zoomatoRoutes"));
 app.use("/secure/user", require("./backend/routes/userRoutes"));
 app.use("/secure/vacations", require("./backend/routes/vacationRoutes"));
