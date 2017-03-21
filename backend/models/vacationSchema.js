@@ -16,36 +16,19 @@ vacationSchema = new Schema({
         type: Boolean,
         default: true
     },
-    days: {
+    vacationDetails: {
         totalDays: {
             type: Number,
             default: 0
         },
-        days: [
-            {
-                dayOfWeek: String,
-                breakfast: [{
-                    restaurants: [{
-                        type: Schema.Types.ObjectId,
-                        rel: "Restaurant"
-                    }]
-                }],
-                lunch: [{
-                    restaurants: [{
-                        type: Schema.Types.ObjectId,
-                        rel: "Restaurant"
-                    }]
-
-                }],
-                dinner: [{
-                    restaurants: [{
-                        type: Schema.Types.ObjectId,
-                        rel: "Restaurant"
-                    }]
-
-                }]
+        mealSchedule: [{
+            dayOfWeek: String,
+            meal: String,
+            restaurant: {
+                type: Schema.Types.ObjectId,
+                rel: "Restaurant"
             }
-        ]
+        }]
     }
 });
 
