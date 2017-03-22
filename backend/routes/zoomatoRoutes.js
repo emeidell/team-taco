@@ -8,8 +8,12 @@ zomatoRoutes.route("/")
         if (req.query) {
             var query = "?";
             for (var key in req.query) {
-                query += key + "=" + req.query[key];
+                query += key + "=" + req.query[key] + "&";
             }
+            query = query.split("");
+            query.pop();
+            query = query.join("");
+            console.log(query);
         } else {
             var query = "";
         }
