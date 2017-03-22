@@ -5,7 +5,7 @@ angular.module("Main")
     var self = this;
 
     this.getVacations = function (user) {
-        return $http.get("/secure/vacations?user=" + "user._id")
+        return $http.get("/secure/vacations?user=" + user._id)
             .then(function (response) {
                 return response.data;
             },
@@ -15,6 +15,7 @@ angular.module("Main")
                         name: "My Vacation",
                         user: user
                     };
+                    console.log(newVacation)
                     return self.createVacation(newVacation)
                 }
                 console.log(response);
@@ -23,7 +24,7 @@ angular.module("Main")
     };
 
     this.createVacation = function (vacation) {
-        return $http.post("/secure/vacation", vacation)
+        return $http.post("/secure/vacations", vacation)
             .then(function (resoponse) {
                 return resoponse.data
             },

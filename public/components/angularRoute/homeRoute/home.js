@@ -1,5 +1,10 @@
 angular.module("Main")
-.controller('homeController', ['$scope', '$uibModal', 'tacoService', function ($scope, $uibModal, tacoService) {
+.controller('homeController', ['$scope', '$uibModal', 'tacoService', "userSigninService", "VacationService", function ($scope, $uibModal, tacoService, userSigninService, VacationService) {
+    $scope.user = userSigninService.getUserHome()
+    if($scope.user) {
+        $scope.vacation = VacationService.getVacations($scope.user)
+        console.log($scope.vacation, "string")
+    }
 
     $scope.zoomatoDisplay = [];
 
@@ -23,7 +28,5 @@ angular.module("Main")
                     controller: "CloseRecipeModal"
                 })
     }
-    $scope.string = function(){
-        console.log("string");
-    }
+
 }]);
