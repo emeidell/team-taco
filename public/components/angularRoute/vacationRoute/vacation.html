@@ -60,31 +60,18 @@
                     <th>Lunch</th>
                     <th>Dinner</th>
                 </tr>
-                <tr>
-                    <td>Monday</td>
-                    <td>McDonalds</td>
-                    <td>Chilis</td>
-                    <td>Pizza hut</td>
+                <tr ng-repeat="day in days">
+                    <td>{{ day }}</td>
+                    <td>
+                        <div ng-repeat="meal in meals | dayFilter: day | mealFilter: 'Breakfast'">{{ meal.restaurant }}</div>
+                    </td>
+                    <td>
+                        <div ng-repeat="meal in meals | dayFilter: day | mealFilter: 'Lunch'">{{ meal.restaurant }}</div>
+                    </td>
+                    <td>
+                        <div ng-repeat="meal in meals | dayFilter: day | mealFilter: 'Dinner'">{{ meal.restaurant }}</div>
+                    </td>
                 </tr>
-                <tr>
-                    <td>Tuesday</td>
-                </tr>
-                <tr>
-                    <td>Wednesday</td>
-                </tr>
-                <tr>
-                    <td>Thursday</td>
-                </tr>
-                <tr>
-                    <td>Friday</td>
-                </tr>
-                <tr>
-                    <td>Saturday</td>
-                </tr>
-                <tr>
-                    <td>Sunday</td>
-                </tr>
-
             </table>
             <footer>
                 <ul>
