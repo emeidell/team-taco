@@ -1,5 +1,5 @@
 angular.module("Main")
-.controller('homeController', ['$scope', 'tacoService', function ($scope, tacoService) {
+.controller('homeController', ['$scope', '$uibModal', 'tacoService', function ($scope, $uibModal, tacoService) {
     $scope.zoomatoDisplay = [];
 
     $scope.getZoomato = function () {
@@ -11,4 +11,20 @@ angular.module("Main")
             })
     };
     $scope.getZoomato();
+
+
+    $scope.results = function (index) {
+                $scope.restaurant = $scope.zoomatoDisplay.restaurants[index]
+                console.log($scope.zoomatoDisplay.restaurants[index]);
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: "modal.html",
+                    scope: $scope,
+                    size: "lg",
+                    controller: "CloseRecipeModal"
+                })
+    }
+    $scope.string = function(){
+        console.log("string");
+    }
 }]);
