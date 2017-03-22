@@ -4,7 +4,9 @@ var Vacation = require("../models/vacationSchema");
 
 vacationRoutes.route("/")
     .get(function (req, res) {
+        console.log(req.query)
         Vacation.findOne({user: req.query.user}, function (err, vacation) {
+            console.log(vacation);
             if (err) return res.status(500).send(err);
             if (!vacation) return res.status(404).send({message: "no vacation"})
             res.send(vacation)
