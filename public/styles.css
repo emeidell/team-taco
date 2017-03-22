@@ -159,6 +159,19 @@ input[type=text]:focus {
     width:200px;
 }
 
+.flex.container{
+    display: -webkit-flex;
+    display: inline-flex;
+    width:200px;
+    height:200px;
+
+
+}
+.flex-item{
+    width:100px;
+    height:200px;
+}
+
 /*********************  Log In Page  *************************/
 
 .login-title {
@@ -224,7 +237,7 @@ input[type=text]:focus {
 .signup-submit {
     color: black;
     font-size: 40px;
-    font-family: 'Cinzel', serif;
+    font-family: 'Gloria Hallelujah', cursive;
     text-decoration: underline;
 }
 
@@ -385,4 +398,4 @@ article img{
 
 
 
-/*>>>>>>> Stashed changes*/
+
