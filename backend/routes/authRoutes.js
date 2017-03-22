@@ -24,7 +24,7 @@ authRoutes.route("/login")
             if (!user) return res.status(401).send({success: false, message: "invalid email or password"});
             user.checkPassword(req.body.password, function (err, isMatch) {
                 if (err) return res.status(500).send(err);
-                if (!isMatch) res.status(401).send({success: false, message: "invalid email or password"});
+                if (!isMatch) return res.status(401).send({success: false, message: "invalid email or password"});
                 var token = jwt.sign(user.toObject(), config.secret, {expiresIn: "2h"});
                 res.send({success: true, message: "Succesfully logged in!", token: token, user: user.withoutPassword()});
             });
