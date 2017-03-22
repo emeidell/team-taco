@@ -7,7 +7,6 @@ angular.module("Main")
 
         return $http.get('/zoomato').then(function (response) {
             self.zoomatoResponse = response.data;
-            console.log(response.data);
             return self.zoomatoResponse;
         })
     }

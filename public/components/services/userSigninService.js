@@ -1,10 +1,8 @@
 angular.module("Main")
 .service("userSigninService", ['$http', '$localStorage', 'tokenService', '$location', function ($http, $localStorage, tokenService, $location) {
     var self = this;
-    //this.user = $localStorage.user || {};
 
     this.newUserPost = function (newUser) {
-        console.log(newUser);
         return $http.post('/auth/signup', newUser)
     };
 
@@ -12,12 +10,17 @@ angular.module("Main")
         return $localStorage.user || $location.path('/landing');
     };
 
+    this.getUserHome = function () {
+        return $localStorage.user || "";
+    };
+
     this.loginPost = function (anotherUser) {
-        console.log(anotherUser)
+        console.log(anotherUser);
         return $http.post('/auth/login', anotherUser).then(function (response) {
+            console.log(response);
             tokenService.setToken(response.data.token);
             $localStorage.user = response.data.user;
-            //self.user = response.data.user;
+
             return response.data;
         })
     };
