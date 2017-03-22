@@ -1,6 +1,6 @@
 angular.module("Main")
 
-    .filter("mealFilter", [function () {
+    .filter("dayFilter", [function () {
         return function (array, dayOfWeek) {
             return array.filter(function (item, index) {
                 item.index = item.index || index;
