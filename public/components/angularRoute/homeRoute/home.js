@@ -1,13 +1,12 @@
 angular.module("Main")
 .controller('homeController', ['$scope', '$uibModal', 'tacoService', function ($scope, $uibModal, tacoService) {
+
     $scope.zoomatoDisplay = [];
 
     $scope.getZoomato = function () {
-        console.log("im working");
         tacoService.getRequest()
             .then(function (response) {
                 $scope.zoomatoDisplay = response;
-                console.log($scope.zoomatoDisplay);
             })
     };
     $scope.getZoomato();

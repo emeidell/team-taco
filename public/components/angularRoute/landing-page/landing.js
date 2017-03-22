@@ -9,12 +9,12 @@ angular.module("Main")
                 })
         };
         $scope.login = function (user) {
-            console.log(user)
+            // console.log(user)
             userSigninService.loginPost(user)
                 .then(function (data) {
                     $location.path("/home");
                 }, function (data) {
-                    alert(data.message);
+                    alert(data.message + "This is working");
                 });
         };
 
