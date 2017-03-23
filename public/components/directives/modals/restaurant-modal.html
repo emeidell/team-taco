@@ -33,16 +33,16 @@
                             <option value="dinner">Dinner</option>
                         </select>
                         <label ng-if="vacation" for="day">Day</label>
-                        <select ng-if="vacation" class="menu-select" ng-model="newRestaurant.day">
-                            <option value="monday">Monday</option>
-                            <option value="tuesday">Tuesday</option>
-                            <option value="wednesday">Wednesday</option>
-                            <option value="thursday">Thursday</option>
-                            <option value="friday">Friday</option>
-                            <option value="saturday">Saturday</option>
-                            <option value="sunday">Sunday</option>
+                        <select ng-if="vacation" class="menu-select" ng-model="newDayOfWeek"> <!-- ng-options="day for day in modalDays">-->
+                            <option ng-repeat="day in modalDays" value="{{ day }}">{{ day }}</option>
+                            <!--<option value="tuesday">Tuesday</option>-->
+                            <!--<option value="wednesday">Wednesday</option>-->
+                            <!--<option value="thursday">Thursday</option>-->
+                            <!--<option value="friday">Friday</option>-->
+                            <!--<option value="saturday">Saturday</option>-->
+                            <!--<option value="sunday">Sunday</option>-->
                         </select>
-                        <button type="button" ng-if="vacation" ng-click="addRestaurant(newRestaurant)" class="btn" style="background-color:rgba(0,0,0,0); border:0; color:red;">Add To Vacation</button>
+                        <button type="button" ng-if="vacation" ng-click="addRestaurant(restaurant.restaurant, newDayOfWeek)" class="btn" style="background-color:rgba(0,0,0,0); border:0; color:red;">Add To Vacation</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()" ng-disabled="loginForm.$invalid">Close</button>
                     </div>
                 </div>
