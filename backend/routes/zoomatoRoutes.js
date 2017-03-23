@@ -7,16 +7,12 @@ zomatoRoutes.route("/")
         if (req.query) {
             var query = "?";
             for (var key in req.query) {
-                query += key + "=" + req.query[key] + "&";
+                if (query.length > 1) query += "&";
+                query += key + "=" + req.query[key]
             }
-            query = query.split("");
-            query.pop();
-            query = query.join("");
-            console.log(query);
         } else {
             var query = "";
         }
-        // console.log(req.query);
         var options = {
             url: "https://developers.zomato.com/api/v2.1/search" + query,
             headers: {

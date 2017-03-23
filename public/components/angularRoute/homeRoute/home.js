@@ -21,7 +21,6 @@ angular.module("Main")
 
         $scope.results = function (index) {
             $scope.restaurant = $scope.zoomatoDisplay.restaurants[index]
-            // console.log($scope.zoomatoDisplay.restaurants[index]);
             var modalInstance = $uibModal.open({
                 animation: true,
                 templateUrl: "modal.html",
