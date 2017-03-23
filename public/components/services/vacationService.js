@@ -15,7 +15,7 @@ angular.module("Main")
                         name: "My Vacation",
                         user: user
                     };
-                    console.log(newVacation)
+                    console.log(newVacation);
                     return self.createVacation(newVacation)
                 }
                 console.log(response);

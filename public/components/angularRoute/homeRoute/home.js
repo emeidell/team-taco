@@ -2,9 +2,18 @@ angular.module("Main")
 .controller('homeController', ['$scope', '$uibModal', 'tacoService', "userSigninService", "VacationService", function ($scope, $uibModal, tacoService, userSigninService, VacationService) {
     $scope.user = userSigninService.getUserHome()
     if($scope.user) {
-        $scope.vacation = VacationService.getVacations($scope.user)
-        console.log($scope.vacation, "string")
+        VacationService.getVacations($scope.user)
+            .then (function (response) {
+                $scope.vacation = response;
+                console.log($scope.vacation);
+            })
     }
+    $scope.modalDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    $scope.addRestaurant = function (newRestaurant, day) {
+        console.log($scope.newDayOfWeek);
+        console.log(newRestaurant, "hope its all there");
+    };
 
     $scope.zoomatoDisplay = [];
 
@@ -18,15 +27,15 @@ angular.module("Main")
 
 
     $scope.results = function (index) {
-                $scope.restaurant = $scope.zoomatoDisplay.restaurants[index]
+                $scope.restaurant = $scope.zoomatoDisplay.restaurants[index];
                 console.log($scope.zoomatoDisplay.restaurants[index]);
                 var modalInstance = $uibModal.open({
                     animation: true,
                     templateUrl: "modal.html",
                     scope: $scope,
                     size: "lg",
-                    controller: "CloseRecipeModal"
-                })
+                    controller: "CloseRestaurantModal"
+                });
     }
 
 }]);
