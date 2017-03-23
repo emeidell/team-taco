@@ -4,7 +4,7 @@
         <h1 id="header-name">Taco Tuesday</h1>
     </div>
     <div class="col-md-2">
-        <button id="home-profile-btn" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Mike
+        <button id="home-profile-btn" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{ profileName }}'s Profile
             <span class="caret"></span></button>
         <ul class="dropdown-menu">
             <li><a href="#/profile">Profile</a></li>
@@ -37,8 +37,8 @@
             </select></li>
 
             <li class="search-label">Search for City Name</li>
-            <li><input  type="text" name="search" placeholder="City name"></li>
-            <button id="nav-search-btn" type="button">Search</button>
+            <li><input  type="text" name="search" placeholder="City name" ng-model="filterSearch.city"></li>
+            <button id="nav-search-btn" type="button" ng-click="searchButton(filterSearch)">Search</button>
         </ul>
     </div>
     <div id="page-content-wrapper">
@@ -57,4 +57,3 @@
         </div>
     </div>
 </div>
-
