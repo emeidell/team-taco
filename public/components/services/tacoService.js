@@ -5,18 +5,18 @@ angular.module("Main")
 
     this.getRequest = function (query) {
         if(query) {
-            var querryString = "?";
+            var queryString = "?";
             for (var key in query) {
-                querryString += key + query[key] + "&"
+                queryString += key + query[key] + "&"
             }
-            querryString = querryString.split("");
-            querryString.pop();
-            querryString.join();
+            queryString = queryString.split("");
+            queryString.pop();
+            queryString.join("");
         } else {
-            query = "";
+            queryString = "";
         }
-
-        return $http.get('/zoomato' + query).then(function (response) {
+        console.log(queryString);
+        return $http.get('/zoomato' + queryString).then(function (response) {
             self.zoomatoResponse = response.data;
             return self.zoomatoResponse;
         })
@@ -25,10 +25,12 @@ angular.module("Main")
     this.getZoomatoLocationId = function (city) {
         return $http.get('/zoomato/city?city=' + city)
             .then(function (response) {
+                console.log(response);
                 var query = {
                     'entity_id': response.data['location_suggestions'][0].entity_id,
                     'entity_type': response.data['location_suggestions'][0].entity_type
                 }
+                console.log(query);
                 return query;
             },
             function (response) {
@@ -36,10 +38,10 @@ angular.module("Main")
                 alert("HI, tooo bad!")
             })
             .then(function (response) {
-               return self.getRequest(query)
+               return self.getRequest(response)
             },
             function (response) {
-                console.log(response);
+                // console.log(response);
                 alert("double Error");
             })
     }
