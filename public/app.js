@@ -16,6 +16,9 @@ angular.module("Main", ['ngRoute', 'ngStorage', "ui.bootstrap"])
             controller: 'landingController',
             templateUrl: './components/angularRoute/landing-page/landing.html'
         })
+        .when('/about', {
+            templateUrl: './components/angularRoute/aboutRoute/about.html'
+        })
         .otherwise({
             redirectTo: '/home'
         });
