@@ -25,7 +25,8 @@
                                 <a href="{{ restaurant.restaurant.menu_url }} " target="_blank">Check out the menu</a>
                             </div>
                             <div class="col-md-6">
-                                <img id="modal-image" ng-src="{{ restaurant.restaurant.thumb }}">
+                                <img ng-if="restaurant.restaurant.thumb.length > 0" id="modal-image" ng-src="{{ restaurant.restaurant.thumb }}" >
+                                <img ng-if="restaurant.restaurant.thumb.length === 0" id="modal-image" ng-src="components/photos/taco tuesday.jpg" >
                             </div>
                         </div>
                     </div>
