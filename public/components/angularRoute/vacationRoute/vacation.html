@@ -64,13 +64,13 @@
                 <tr ng-repeat="day in days">
                     <td>{{ day }}</td>
                     <td>
-                        <div ng-repeat="meal in meals | dayFilter: day | mealFilter: 'Breakfast'">{{ meal.restaurant }}</div>
+                        <div ng-repeat="meal in meals | dayFilter: day | mealFilter: 'Breakfast'">{{ meal.restaurant.name }}</div>
                     </td>
                     <td>
-                        <div ng-repeat="meal in meals | dayFilter: day | mealFilter: 'Lunch'">{{ meal.restaurant }}</div>
+                        <div ng-repeat="meal in meals | dayFilter: day | mealFilter: 'Lunch'">{{ meal.restaurant.name }}</div>
                     </td>
                     <td>
-                        <div ng-repeat="meal in meals | dayFilter: day | mealFilter: 'Dinner'">{{ meal.restaurant }}</div>
+                        <div ng-repeat="meal in meals | dayFilter: day | mealFilter: 'Dinner'">{{ meal.restaurant.name }}</div>
                     </td>
                 </tr>
             </table>

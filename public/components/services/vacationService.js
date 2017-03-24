@@ -35,7 +35,7 @@ angular.module("Main")
     };
 
     this.updateVacation = function (vacation) {
-        return $http.post("/secure/vacation", vacation)
+        return $http.put("/secure/vacations/" + vacation._id, vacation)
             .then(function (response) {
                 return response.data
             },
@@ -43,7 +43,7 @@ angular.module("Main")
                 console.log(response);
                 alert("uh oh :(");
             })
-    }
+    };
 
     this.saveRestaurant = function (restaurant) {
         return $http.post("/secure/restaurant", restaurant)
@@ -54,7 +54,25 @@ angular.module("Main")
                 console.log(response);
                 alert("Oh boy..");
             })
+    };
+
+    this.getRestaurant = function (id, i) {
+        return $http.get("/secure/restaurant/" + id)
+            .then(function (response) {
+                console.log(response, "service");
+                response.data.index = i
+                return response.data;
+            })
     }
+
+    // this.addToVacation = function (vacation, restaurant) {
+    //     if (restaurant) {
+    //         return self.saveRestaurant(restaurant)
+    //             .then(function (response) {
+    //                 vacation.vacationDetails.mealSchedule.push(response)
+    //             })
+    //     }
+    // }
 
     // this.removeRestaurant = function (vacation) {
     //     return self.updateVacation(vacation)

@@ -29,7 +29,7 @@ restaurantRoutes.route("/")
 
 restaurantRoutes.route("/:id")
     .get(function (req, res)  {
-        Restaurant.findOneById(req.body._id, function (err, restaurant) {
+        Restaurant.findById(req.params.id, function (err, restaurant) {
             if (err) return res.status(500).send(err);
             res.send(restaurant);
         })

@@ -4,9 +4,10 @@ var Vacation = require("../models/vacationSchema");
 
 vacationRoutes.route("/")
     .get(function (req, res) {
-        console.log(req.query)
-        Vacation.findOne({user: req.query.user}, function (err, vacation) {
+        console.log(req.query);
+        Vacation.findOne({user: req.query.user}).exec(function (err, vacation) {
             console.log(vacation);
+            console.log(vacation.vacationDetails.mealSchedule);
             if (err) return res.status(500).send(err);
             if (!vacation) return res.status(404).send({message: "no vacation"})
             res.send(vacation)
@@ -28,7 +29,8 @@ vacationRoutes.route("/:id")
         })
     })
     .put(function (req, res) {
-        Vacation.findOneByIdAndUpdate(req.body._id, req.body, {new: true}, function (err, updatedVacation) {
+        console.log("check for vacay" ,req.body);
+        Vacation.findByIdAndUpdate(req.body._id, req.body, {new: true}, function (err, updatedVacation) {
             if (err) return res.status(500).send(err);
             res.send(updatedVacation);
         })

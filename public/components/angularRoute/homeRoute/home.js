@@ -1,15 +1,13 @@
 angular.module("Main")
-.controller('homeController', ['$scope', '$uibModal', 'tacoService', "userSigninService", "VacationService", function ($scope, $uibModal, tacoService, userSigninService, VacationService) {
-    $scope.user = userSigninService.getUserHome()
-    if ($scope.user) {
-        VacationService.getVacations($scope.user)
-            .then(function (response) {
-                $scope.vacation = response;
-                console.log($scope.vacation);
-            })
-    }
-
-    $scope.modalDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    .controller('homeController', ['$scope', '$uibModal', 'tacoService', "userSigninService", "VacationService", function ($scope, $uibModal, tacoService, userSigninService, VacationService) {
+        $scope.user = userSigninService.getUserHome()
+        if ($scope.user) {
+            VacationService.getVacations($scope.user)
+                .then(function (response) {
+                    $scope.vacation = response;
+                    console.log($scope.vacation);
+                })
+        }
 
 
         $scope.profileName = $scope.user.displayName.charAt(0).toUpperCase() + $scope.user.displayName.slice(1);
@@ -24,33 +22,52 @@ angular.module("Main")
         };
         $scope.getZoomato();
 
+        $scope.addToVacation = function (restaurant, restaurantCheck) {
+            return VacationService.saveRestaurant(restaurantCheck)
+                .then(function (response) {
+                    restaurant.restaurant = response;
+                    $scope.vacation.vacationDetails.mealSchedule.push(restaurant);
+                    return VacationService.updateVacation($scope.vacation);
+                },
+                function (response) {
+                    alert("something didn't work")
+                })
+                .then(function (response) {
+                    $scope.vacation = response;
+                    console.log("moment of truth", $scope.vacation);
+                },
+                function (response) {
+                    alert('almost');
+                })
+        };
 
-    $scope.results = function (index) {
-        $scope.restaurant = $scope.zoomatoDisplay.restaurants[index];
-        console.log($scope.zoomatoDisplay.restaurants[index]);
-        var modalInstance = $uibModal.open({
-            animation: true,
-            templateUrl: "modal.html",
-            // scope: $scope,
-            size: "lg",
-            controller: "CloseRestaurantModal",
-            resolve: {
-                options: function() {
-                    return {
-                        modalDays: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                        restaurant: $scope.restaurant,
-                        modalMeals: ["Breakfast", "Lunch", "Dinner"],
-                        vacation: $scope.vacation
+
+        $scope.results = function (index) {
+            $scope.restaurant = $scope.zoomatoDisplay.restaurants[index];
+            console.log($scope.zoomatoDisplay.restaurants[index]);
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: "modal.html",
+                // scope: $scope,
+                size: "lg",
+                controller: "CloseRestaurantModal",
+                resolve: {
+                    options: function () {
+                        return {
+                            modalDays: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                            restaurant: $scope.restaurant,
+                            modalMeals: ["Breakfast", "Lunch", "Dinner"],
+                            vacation: $scope.vacation
+                        }
                     }
                 }
-            }
-        });
+            });
 
-        modalInstance.result.then(function(data) {
-
-            console.log(data);
-        });
-    }
+            modalInstance.result.then(function (data) {
+                $scope.addToVacation(data, data.restaurant);
+                console.log(data);
+            });
+        }
 
         $scope.searchButton = function (filterSearch) {
             tacoService.getZoomatoLocationId(filterSearch.city)
