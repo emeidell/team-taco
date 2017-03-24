@@ -2,6 +2,7 @@ var express = require("express");
 var zomatoRoutes = express.Router();
 var request = require("request");
 var config = require("../../config");
+
 zomatoRoutes.route("/")
     .get(function (req, res) {
         if (req.query) {
@@ -19,7 +20,6 @@ zomatoRoutes.route("/")
                'user-key': config.key
             }
         };
-        console.log(options);
         request(options, function (err, response, body) {
             if (err) return res.status(500).send(err);
             res.send(body);
@@ -40,4 +40,5 @@ zomatoRoutes.route("/city")
             res.send(body);
         })
     });
+
 module.exports = zomatoRoutes;
