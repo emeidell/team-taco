@@ -126,6 +126,10 @@ input[type=text]:focus {
 #header-name{
     font-size:60px;
 }
+.header-name-button {
+    color: black;
+}
+
 
 .restaurant-image{
     height:75px;

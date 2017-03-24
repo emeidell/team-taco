@@ -9,7 +9,7 @@ angular.module("Main")
                 })
         };
         $scope.login = function (user) {
-            // console.log(user)
+
             userSigninService.loginPost(user)
                 .then(function (data) {
                     $location.path("/home");
@@ -18,4 +18,11 @@ angular.module("Main")
                 });
         };
 
+        // $scope.loginEnter = function ($event, user) {
+        //     if ($event.which === 13) {
+        //         console.log($event);
+        //         console.log(user);
+        //         $scope.login(user);
+        //     }
+        // }
     }]);
