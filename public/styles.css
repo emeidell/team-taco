@@ -54,7 +54,7 @@
 
 }
 #nav-search-btn{
-    margin:5px 0px 0px -75px;
+    /*margin:5px 0px 0px -145px;*/
 
 }
 
@@ -159,17 +159,9 @@ input[type=text]:focus {
     width:200px;
 }
 
-.flex.container{
-    display: -webkit-flex;
-    display: inline-flex;
-    width:200px;
-    height:200px;
-
-
-}
-.flex-item{
-    width:100px;
-    height:200px;
+#home-search-input{
+    width:185px;
+    margin-left:-15px;
 }
 
 /*********************  Log In Page  *************************/
@@ -252,7 +244,7 @@ input[type=text]:focus {
 
 /********************** vacation page *************************/
 .vacation-main{
-    background-color:rgba(1,1,1,0.3);
+    background-color:rgba(1,1,1,0.5);
     padding:20px;
     color:yellow;
     text-shadow:2px 2px black;
@@ -275,7 +267,7 @@ input[type=text]:focus {
 
 .schedule-header{
     text-align: center;
-    font-family: 'Permanent Marker', cursive;
+    font-family: serif;
     font-size:60px;
     margin-bottom: 30px;
     text-decoration: underline;
@@ -288,12 +280,14 @@ table th{
     font-size:30px;
     text-decoration:underline;
     text-align: center;
+    font-family:serif;
 }
 tr td{
     padding-top:30px;
     /*border:1px solid black;*/
     text-align: center;
     font-size:20px;
+    font-family: serif;
 }
 tr{
     border-bottom:1px solid white;
@@ -317,9 +311,9 @@ footer li{
 /********************** Profile Page *************************/
 header{
 
-    background-color:rgba(255, 0, 0, 0.8);
+    background-color:rgba(255, 0, 0, 0.6);
     border-bottom:1px solid black;
-    padding:10px;
+    /*padding:10px;*/
 
 }
 
@@ -359,6 +353,7 @@ section{
 
     background-color:rgba(250, 250, 210, 0.5);
     padding-bottom:30px;
+    height:100%;
 }
 
 article img{
@@ -379,23 +374,41 @@ article img{
 .saved-vacation-cities h2{
     text-decoration:underline;
 }
-/*.saved-vacation-cities h3{*/
-    /*float:left;*/
-/*}*/
-/*.saved-vacation-cities button{*/
-    /*float:left;*/
-/*}*/
+
+.profile-footer{
+    margin-left:0px;
+
+}
+.profile-img{
+    height:400px;
+    width:100%;
+    /*margin-top:-40px;*/
+}
 
 /************************ Home Page ***************************/
 
 .mainContent{
-    background-color:rgba(1,1,1,0.2);
+    background-color:rgba(1,1,1,0.5);
     text-align: center;
-    color:white;
     background-size:cover;
 
 }
 
+/***************************  About Page  *************************/
 
+#about-title{
+    text-align: center;
+    font-size: 50px;
+    color:white;
+}
 
+#about-content{
+    /*background-color:rgba(250, 250, 210, 0.7);*/
+    background-color:rgba(1,1,1,0.5);
+    padding:10px;
+    text-align: center;
+    font-family: serif;
+    font-weight: 900;
+    color:white;
+}
 

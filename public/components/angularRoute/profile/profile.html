@@ -1,12 +1,16 @@
 <header>
-    <div class="row">
-        <div class="col-md-2">
-            <img src="/components/photos/taco tuesday.jpg">
-        </div>
+    <div id="header-home" class="row">
+        <!--<div class="col-md-2">-->
+            <!--<img src="/components/photos/taco tuesday.jpg">-->
+        <!--</div>-->
 
-        <div class="col-md-8 search">
-            <input type="text" name="search" placeholder="Search for restaurant or cuisine">
-            <button id="search-btn" type="button" class="btn btn-success btn-md">Search</button>
+        <!--<div class="col-md-8 search">-->
+            <!--<input type="text" name="search" placeholder="Search for restaurant or cuisine">-->
+            <!--<button id="search-btn" type="button" class="btn btn-success btn-md">Search</button>-->
+        <!--</div>-->
+
+            <div class="col-md-10 text-center">
+                <h1 id="header-name">Taco Tuesday</h1>
         </div>
 
         <div class="col-md-2 dropdown">
@@ -25,7 +29,8 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand"><a href="#">Home</a></li>
-            <li><a href="#">My Vacation</a></li>
+            <li><a href="#/vacation">My Vacation</a></li>
+            <li><a href="#/about">About</a></li>
         </ul>
     </div>
     <div id="page-content-wrapper">
@@ -33,6 +38,7 @@
             <section>
                 <div class="row edit-profile">
                     <div class="col-md-12">
+
                         <h2>Edit your Profile</h2>
                     </div>
                 </div>
@@ -70,21 +76,7 @@
                         <button type="button" style="background-color:rgba(0,0,0,0); border:0" data-toggle="modal" data-target="#myModal-notes">Edit Notes</button>
                     </div>
                 </div>
-                <!--<div class="row saved-vacation-cities">-->
-                    <!--<div class="col-md-12">-->
-                        <!--<h2>Las Vegas</h2>-->
-                        <!--<h3>Notes:</h3>-->
-                        <!--<h3 ng-repeat="notes in user">{{ notes.user.notes}}</h3>-->
 
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="row saved-vacation-cities">-->
-                    <!--<div class="col-md-12">-->
-                        <!--<h2>Salt Lake City</h2>-->
-                        <!--<h3>Notes:</h3>-->
-
-                    <!--</div>-->
-                <!--</div>-->
             </section>
             <div id="myModal-notes" class="modal fade" role="dialog">
             <div class="modal-dialog">

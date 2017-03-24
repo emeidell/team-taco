@@ -18,43 +18,40 @@
         <ul class="sidebar-nav">
             <li class="sidebar-brand"><a href="#/home">Home</a></li>
             <li><a href="#/vacation">My Vacation</a></li>
+            <li><a href="#/about">About</a></li>
             <!--<li><a href="#/landing">Restaurants</a></li>-->
-            <li class="search-label">Select By Price</li>
-            <li><select>
-                <option value=""></option>
-                <option value="$">$</option>
-                <option value="$$">$$</option>
-                <option value="$$$">$$$</option>
-                <option value="$$$$">$$$$</option>
-            </select></li>
-            <li class="search-label">Select By Cuisine</li>
-            <li><select>
-                <option value=""></option>
-                <option value="american">American</option>
-                <option value="asian">Asian</option>
-                <option value="italian">Italian</option>
-                <option value="mexican">Mexican</option>
-            </select></li>
+            <!--<li class="search-label">Select By Price</li>-->
+            <!--<li><select>-->
+                <!--<option value=""></option>-->
+                <!--<option value="$">$</option>-->
+                <!--<option value="$$">$$</option>-->
+                <!--<option value="$$$">$$$</option>-->
+                <!--<option value="$$$$">$$$$</option>-->
+            <!--</select></li>-->
+            <!--<li class="search-label">Select By Cuisine</li>-->
+            <!--<li><select>-->
+                <!--<option value=""></option>-->
+                <!--<option value="american">American</option>-->
+                <!--<option value="asian">Asian</option>-->
+                <!--<option value="italian">Italian</option>-->
+                <!--<option value="mexican">Mexican</option>-->
+            <!--</select></li>-->
 
             <li class="search-label">Search for City Name</li>
-            <li><input  type="text" name="search" placeholder="City name" ng-model="filterSearch.city"></li>
+            <li><input  class="form-control" type="text" name="search" placeholder="City name" ng-model="filterSearch.city"></li>
             <button id="nav-search-btn" type="button" ng-click="searchButton(filterSearch)">Search</button>
         </ul>
     </div>
 
     <div id="page-content-wrapper">
-        <div class="page-content bkgrnd-img">
-
-                <div>
+        <div class="page-content container-fluid">
                     <div class="row mainContent">
-                        <h2 id="featured-restaurant">Featured Restaurants</h2>
-                        <div class="col-md-6 restaurant-info" ng-repeat="restaurant in zoomatoDisplay.restaurants track by $index">
-                            <button id="restaurant-button" type="button" ng-click="results($index)" style="background-color:rgba(0,0,0,0); border:0" >{{ restaurant.restaurant.name }}</button>
-                            <h4>{{ restaurant.restaurant.cuisines }}</h4>
-
-                        </div>
+                            <h2 id="featured-restaurant">Featured Restaurants</h2>
+                            <div class="col-md-6 restaurant-info" ng-repeat="restaurant in zoomatoDisplay.restaurants track by $index">
+                                <button id="restaurant-button" type="button" ng-click="results($index)" style="background-color:rgba(0,0,0,0); border:0" >{{ restaurant.restaurant.name }}</button>
+                                <h4>{{ restaurant.restaurant.cuisines }}</h4>
+                            </div>
                     </div>
-                </div>
         </div>
     </div>
 </div>
