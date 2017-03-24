@@ -50,6 +50,7 @@
                             <div class="col-md-6 restaurant-info" ng-repeat="restaurant in zoomatoDisplay.restaurants track by $index">
                                 <button id="restaurant-button" type="button" ng-click="results($index)" style="background-color:rgba(0,0,0,0); border:0" >{{ restaurant.restaurant.name }}</button>
                                 <h4>{{ restaurant.restaurant.cuisines }}</h4>
+                                <h4>City: {{ restaurant.restaurant.location.city }}</h4>
                             </div>
                     </div>
         </div>
