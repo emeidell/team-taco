@@ -19,6 +19,7 @@ angular.module("Main")
             tacoService.getRequest()
                 .then(function (response) {
                     $scope.zoomatoDisplay = response;
+                    console.log(response);
                 })
         };
         $scope.getZoomato();

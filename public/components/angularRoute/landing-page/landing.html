@@ -27,12 +27,12 @@
                     <input class="form-control" name="email" id="email" required ng-model="user.email">
 
                     <label for="password">Password</label>
-                    <input class="form-control" name="password" id="password" required ng-model="user.password">
+                    <input class="form-control" type="password" name="password" id="password" required ng-model="user.password">
                     <button type="button" ng-click="login(user)" class="btn btn-primary btn-lrg">Submit</button>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" ng-disabled="loginForm.$invalid">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
 
@@ -70,7 +70,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" ng-disabled="signupForm.$invalid">Close</button>
+                <button  type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
 
