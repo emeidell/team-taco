@@ -7,17 +7,21 @@
                 <div>
                     <div class="modal-header">
                         <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
-                        <h4 id="modal-restaurant-name" data-target="modal.html" data-toggle="modal" class="modal-title" >{{ restaurant.restaurant.name }}</h4>
+                        <h4 id="modal-restaurant-name" data-target="modal.html" data-toggle="modal" class="modal-title">
+                            {{ restaurant.restaurant.name }}</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-6">
                                 <h4>{{ restaurant.restaurant.location.address }}</h4>
-                                <h4>Average Cost for 2 People: {{ restaurant.restaurant.currency }}{{ restaurant.restaurant.average_cost_for_two}}</h4>
+                                <h4>Average Cost for 2 People: {{ restaurant.restaurant.currency }}{{
+                                    restaurant.restaurant.average_cost_for_two}}</h4>
                                 <h4>Cuisine: {{ restaurant.restaurant.cuisines}}</h4>
-                                <h4 ng-style="{color:'#' + restaurant.restaurant.user_rating.rating_color}">User Rating: {{ restaurant.restaurant.user_rating.rating_text }} </h4>
+                                <h4 ng-style="{color:'#' + restaurant.restaurant.user_rating.rating_color}">User Rating:
+                                    {{ restaurant.restaurant.user_rating.rating_text }} </h4>
                                 <h4>Votes: {{ restaurant.restaurant.user_rating.votes }}</h4>
-                                <a href="{{ restaurant.restaurant.url }} " target="_blank">{{ restaurant.restaurant.name }}</a><br>
+                                <a href="{{ restaurant.restaurant.url }} " target="_blank">{{ restaurant.restaurant.name
+                                    }}</a><br>
                                 <a href="{{ restaurant.restaurant.menu_url }} " target="_blank">Check out the menu</a>
                             </div>
                             <div class="col-md-6">
@@ -26,28 +30,28 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <label ng-if="vacation" for="time-of-day">Time of Day</label>
-                        <select ng-if="vacation" class="menu-select" ng-model="newRestaurant.time">
-                            <option value="breakfast">Breakfast</option>
-                            <option value="lunch">Lunch</option>
-                            <option value="dinner">Dinner</option>
-                        </select>
-                        <label ng-if="vacation" for="day">Day</label>
-                        <select ng-if="vacation" class="menu-select" ng-model="newDayOfWeek"> <!-- ng-options="day for day in modalDays">-->
-                            <option ng-repeat="day in modalDays" value="{{ day }}">{{ day }}</option>
-                            <!--<option value="tuesday">Tuesday</option>-->
-                            <!--<option value="wednesday">Wednesday</option>-->
-                            <!--<option value="thursday">Thursday</option>-->
-                            <!--<option value="friday">Friday</option>-->
-                            <!--<option value="saturday">Saturday</option>-->
-                            <!--<option value="sunday">Sunday</option>-->
-                        </select>
-                        <button type="button" ng-if="vacation" ng-click="addRestaurant(restaurant.restaurant, newDayOfWeek)" class="btn" style="background-color:rgba(0,0,0,0); border:0; color:red;">Add To Vacation</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()" ng-disabled="loginForm.$invalid">Close</button>
+                        <div>
+                            <label ng-if="vacation" for="time-of-day">Time of Day</label>
+                            <select ng-show="vacation" class="menu-select" ng-model="newMeal">
+                                <option ng-repeat="meal in modalMeals" value="{{ meal }}">{{ meal }}</option>
+                            </select>
+                            <label ng-if="vacation" for="day">Day</label>
+                            <select ng-show="vacation" class="menu-select" ng-model="newDayOfWeek">
+                                <!-- ng-options="day for day in modalDays">-->
+                                <option ng-repeat="day in modalDays" value="{{ day }}">{{ day }}</option>
+                            </select>
+                            <button type="button" ng-if="vacation"
+                                    ng-click="addRestaurant(restaurant.restaurant, newDayOfWeek, newMeal)" class="btn"
+                                    style="background-color:rgba(0,0,0,0); border:0; color:red;">Add To Vacation
+                            </button>
+                        </div>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()"
+                                ng-disabled="loginForm.$invalid">Close
+                        </button>
                     </div>
                 </div>
 
             </div>
         </div>
-</script>
+    </script>
 </div>

@@ -5,18 +5,16 @@ angular.module("Main")
 
     this.getRequest = function (query) {
         if(query) {
-            var querryString = "?";
+            var queryString = "?";
             for (var key in query) {
-                querryString += key + query[key] + "&"
+                if (queryString.length > 1) queryString += "&";
+                queryString += key + "=" + query[key];
             }
-            querryString = querryString.split("");
-            querryString.pop();
-            querryString.join();
+            console.log(queryString);
         } else {
-            query = "";
+            queryString = "";
         }
-
-        return $http.get('/zoomato' + query).then(function (response) {
+        return $http.get('/zoomato' + queryString).then(function (response) {
             self.zoomatoResponse = response.data;
             return self.zoomatoResponse;
         })
@@ -32,14 +30,12 @@ angular.module("Main")
                 return query;
             },
             function (response) {
-                console.log(response);
                 alert("HI, tooo bad!")
             })
             .then(function (response) {
-               return self.getRequest(query)
+               return self.getRequest(response)
             },
             function (response) {
-                console.log(response);
                 alert("double Error");
             })
     }
